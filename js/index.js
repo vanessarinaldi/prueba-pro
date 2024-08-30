@@ -12,13 +12,3 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
-// index.js
-window.onload = function() {
-    const username = sessionStorage.getItem('username');
-    if (username) {
-        document.getElementById('user-info').innerText = `Welcome, ${username}`;
-    } else {
-        // Redirigir al login si no hay un nombre de usuario en la sesión
-        window.location.href = 'login.html';
-    }
-};
