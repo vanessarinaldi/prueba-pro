@@ -10,3 +10,15 @@ document.getElementById('boton').addEventListener('click', function(event) {
         alert('Please fill in the fields.');
     }
 });
+// login.js
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const username = document.getElementById('user').value;
+    
+    // Guardar el nombre de usuario en la sesión
+    sessionStorage.setItem('username', username);
+    
+    // Redirigir a la página principal
+    window.location.href = 'index.html';
+});
