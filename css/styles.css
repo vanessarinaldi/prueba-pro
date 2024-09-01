@@ -236,17 +236,39 @@ a.custom-card:hover {
   width: 100%;
   height: 90%;
 }
-@media (min-width: 768px) {
+
+@media (max-width: 568px){
   .jumbotron {
-    padding-top: 6rem;
+    padding-top: 1rem;
     padding-bottom: 6rem;
+    height: 100px;
   }
-  .img-card {
-    width: 35%;
-    height: 200px;
-    border-radius: 30px;
+  .card-autos{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    width: 100%;
+    gap: 10px;
+    height: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    align-content: center;
+    align-items: center;
+    background-color: white;
   }
 }
+
+#user-container{
+  float: right;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  background-color:#343a40;
+  color: white;
+  width: 100px;
+  height: 48px;
+  align-content: center;
+}
+
 @media (min-width: 568px) and (max-width: 1024px){
   .jumbotron {
     padding-top: 6rem;
@@ -260,7 +282,7 @@ a.custom-card:hover {
     border-radius: 30px;
     width: 100%;
     gap: 10px;
-    height: 150px;
+    height: 180px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s;
@@ -270,6 +292,7 @@ a.custom-card:hover {
     background-color: white;
   }
   .img-card {
+    width: 35%;
     height: 130px;
   }
   .card-body-autos h5 {
@@ -282,26 +305,17 @@ a.custom-card:hover {
     font-size: 15px;
   }
 }
+ 
 
-@media (max-width: 568px){
+
+@media (min-width: 1024px) {
   .jumbotron {
-    padding-top: 1rem;
+    padding-top: 6rem;
     padding-bottom: 6rem;
   }
-  .card-autos {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
+  .img-card {
+    width: 35%;
+    height: 150px;
     border-radius: 30px;
-    width: 100%;
-    gap: 10px;
-    height: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-    margin-top: 60px;
-    align-content: center;
-    align-items: center;
-    background-color: white;
   }
 }
