@@ -335,6 +335,7 @@ a.custom-card:hover {
   height: 50px;
   height: 50px;
   border-radius: 10px;
+  border-color: #FB7D00;
 }
 #bot2 {
   text-align: right;
@@ -345,6 +346,7 @@ a.custom-card:hover {
   width: 50px;
   height: 50px;
   border-radius: 10px;
+  border-color: #FB7D00;
 }
 #bot3 {
   text-align: right;
@@ -356,6 +358,7 @@ a.custom-card:hover {
   height: 50px;
   margin-right: 1%;
   border-radius: 10px;
+  border-color: #FB7D00;
 }
 #price-filter {
   display: flex; 
