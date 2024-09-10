@@ -25,3 +25,14 @@ getJSONData(PRODUCTS).then(function(res){
 .catch(function(error){
     console.error(error)
 })
+document.getElementById("limpiar").addEventListener("click", function () {
+
+})
+
+
+function limpiar() {
+let borrar = document.getElementById("contenedor");
+
+
+borrar.innerHTML = "";
+}
