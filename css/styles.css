@@ -387,3 +387,24 @@ a.custom-card:hover {
   cursor: pointer;
   border-radius: 5px;
 }
+#buscar {
+  display: flex;           
+  justify-content: center; 
+  align-items: center;     
+  margin-top: 20px;    
+}
+#campo-busqueda{
+  width: 300px;
+  padding: 5px;
+}
+
+
+#boton{
+  background-image: url("../lupa.jpeg");
+  background-size: contain;
+  background-position: center;
+  border-radius: 2px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;           
+}
