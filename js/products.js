@@ -37,8 +37,9 @@ let borrar = document.getElementById("contenedor");
 borrar.innerHTML = "";
 }
 
+
 const input = document.querySelector("input");
-const log = document.getElementById("campo-busqueda");
+const log = document.getElementById("busqueda");
 
 input.addEventListener("input", updateValue);
 
