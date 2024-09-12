@@ -319,7 +319,7 @@ a.custom-card:hover {
     border-radius: 30px;
   }
 }
-#options-filter {
+#opciones {
   display: flex; 
   justify-content: flex-end; 
   gap: 1%;
@@ -361,7 +361,7 @@ a.custom-card:hover {
   border-radius: 10px;
   border-color: #fff;
 }
-#price-filter {
+#preciofiltro{
   display: flex; 
   justify-content: flex-end; 
   gap: 10px;
@@ -374,7 +374,7 @@ a.custom-card:hover {
   color: #494642;
   font-weight: bold;
 }
-#min-price, #max-price{
+#min, #max{
  border-radius: 5px;
  background-color: #ecebd7;
 }
@@ -393,7 +393,7 @@ a.custom-card:hover {
   align-items: center;     
   margin-top: 20px;    
 }
-#campo-busqueda{
+#busqueda{
   width: 300px;
   padding: 5px;
 }
