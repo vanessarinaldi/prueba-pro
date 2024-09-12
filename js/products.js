@@ -36,3 +36,12 @@ let borrar = document.getElementById("contenedor");
 
 borrar.innerHTML = "";
 }
+
+const input = document.querySelector("input");
+const log = document.getElementById("campo-busqueda");
+
+input.addEventListener("input", updateValue);
+
+function updateValue(e) {
+  log.textContent = e.target.value;
+}
