@@ -39,66 +39,30 @@
   </nav>
   <img src="prototipo 2.jpeg" id="header-product" alt="imagen Inicio">
   
- <!-- botones de precios y orden 
-<div id="opciones">
-      <button id="bot1"value="price-asc"></button>
-      <button id="bot2"value="price-desc"></button>
-      <button id="bot3"value="relevance-desc"></buton>
-  </select>
+  <div id="buscar">
+    <input type="search" id="busqueda" placeholder="Buscar...">
+    <button id="boton"></button>
+    </div>
+
+  <div id="opciones">
+    <button id="bot1"value="price-asc"></button>
+    <button id="bot2"value="price-desc"></button>
+    <button id="bot3"value="relevance-desc"></buton>
+</select>
 </div>
 
 <div id="preciofiltro">
-  <label id="precio" for="min-price">Precio:</label>
-  <input type="number" id="min" placeholder="Mínimo">
-  <input type="number" id="max" placeholder="Máximo">
+<label id="precio" for="min-price">Precio:</label>
+<input type="number" id="min" placeholder="Mínimo">
+<input type="number" id="max" placeholder="Máximo">
 
-  <button id="filtrar">Filtrar</button>
-  <button id="limpiar"> Limpiar</button>
+<button id="filtrar">Filtrar</button>
+<button id="limpiar"> Limpiar</button>
 </div>
 
-<div id="buscar">
-  <input type="search" id="busqueda" placeholder="Buscar...">
-  <button id="boton"></button>
-</div> -->
-<div class="container">
-  <div class="row">
-    <div class="col text-end">
-      <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
-        <input type="radio" class="btn-check" name="options" id="sortAsc">
-        <label class="btn btn-light" for="sortAsc">A-Z</label>
-        <input type="radio" class="btn-check" name="options" id="sortDesc">
-        <label class="btn btn-light" for="sortDesc">Z-A</label>
-        <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
-        <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
-      <div class="row container p-0 m-0">
-        <div class="col">
-          <p class="font-weight-normal text-end my-2">Cant.</p>
-        </div>
-        <div class="col">
-          <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-        </div>
-        <div class="col">
-          <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-        </div>
-        <div class="col-3 p-0">
-          <div class="btn-group" role="group">
-            <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-            <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-   <main class="pb-5 container">
+  <main class="pb-5 container">
     
-    <div class="container" id="container-autos">
+    <div class="container" id="container-products">
       
     </div>
   </main>
