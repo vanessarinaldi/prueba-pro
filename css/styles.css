@@ -389,18 +389,7 @@ a.custom-card:hover {
     position: relative;
     bottom: 2rem;
   }
-  .btn {
-    width: 0.1rem;
-    height: 0.1rem;
-    border-radius: 100%;
-    background: #c4bcb3;
-    border-color: #343a40;
-    border-width: 0.1rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
-    flex-direction: row;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
+  
   .btn.active{
     background: #6f7377;
   }
@@ -608,18 +597,7 @@ a.custom-card:hover {
     position: relative;
     bottom: 2rem;
   }
-  .btn {
-    width: 0.1rem;
-    height: 0.1rem;
-    border-radius: 100%;
-    background: #c4bcb3;
-    border-color: #343a40;
-    border-width: 0.1rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
-    flex-direction: row;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
+  
   .btn.active{
     background: #6f7377;
   }
@@ -807,18 +785,7 @@ a.custom-card:hover {
     position: relative;
     bottom: 3rem;
   }
-  .btn {
-    width: 0.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background: #c4bcb3;
-    border-color: #343a40;
-    border-width: 0.1rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
-    flex-direction: row;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
+  
   .btn.active{
     background: #6f7377;
   }
