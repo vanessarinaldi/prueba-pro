@@ -283,7 +283,15 @@ function sortAndShowCategories(sortCriteria, categoriesArray) {
 }
 
 // Evento que ocurre cuando el documento está cargado
-document.addEventListener("DOMContentLoaded", function() {
+
+    document.addEventListener("DOMContentLoaded", function(e){
+        getJSONData(PRODUCTS_URL).then(function(resultObj){
+            if (resultObj.status === "ok"){
+                currentCategoriesArray = resultObj.data
+                showCategoriesList()
+                //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+            }
+        });
     // Asignar funciones a los botones de ordenamiento
     document.getElementById("bot1").addEventListener("click", function() {
         sortAndShowCategories(ORDER_ASC_BY_PROD_COST); // Ordenar por precio ascendente
@@ -312,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("filtrar").addEventListener("click", function() {
         minCount = document.getElementById("min").value;
         maxCount = document.getElementById("max").value;
+        
 
         if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0) {
             minCount = parseInt(minCount);
