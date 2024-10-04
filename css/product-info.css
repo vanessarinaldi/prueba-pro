@@ -30,3 +30,30 @@
   .btn-submit:hover {
     background-color: #f1d96c;
   }
+/* Seccion de comentarios */
+.comment {
+  margin-bottom: 15px;
+  padding: 15px; 
+  background-color: #f8f9fa; 
+  border: 1px solid #dee2e6; 
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+.comment:hover {
+  background-color: #dbb077; 
+}
+
+.comment strong {
+  color: #723b08;  /*color de usuario*/
+  font-size: 1.1em; 
+}
+
+.comment small {
+  color: #6c757d; /*color de fecha*/
+  font-size: 0.9em; 
+}
+
+.stars {
+  color: #ec8601; /*color de estrella*/
+}

@@ -49,6 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     changeImage(i);
                 });
             }
+        }
+    }).catch(function (error) {
+        console.error('Error al obtener los datos del producto:', error);
+    });
 
         
             getJSONData(PRODUCT_COMMENTS_URL).then(function (commentsRes) {
@@ -71,8 +75,83 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error('Error al obtener los comentarios del producto:', error);
             });
 
-        }
-    }).catch(function (error) {
-        console.error('Error al obtener los datos del producto:', error);
+        }); 
+let comments = []; // Array para almacenar los comentarios
+let selectedRating = 0; // Variable para almacenar la calificación seleccionada
+
+// Manejar el evento de selección de calificación
+document.querySelectorAll('.rating i').forEach(star => {
+    star.addEventListener('click', function() {
+        selectedRating = parseInt(this.getAttribute('data-value'));
+        highlightStars(selectedRating);
     });
 });
+
+// Función para resaltar las estrellas según la calificación seleccionada
+function highlightStars(rating) {
+    const stars = document.querySelectorAll('.rating i');
+    stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+            star.classList.add('text-warning'); // Cambia el color de las estrellas llenas
+        } else {
+            star.classList.remove('text-warning'); // Quita el color de las estrellas vacías
+        }
+    });
+}
+
+// Función para mostrar los comentarios
+function displayComments() {
+    const commentsListContainer = document.getElementById('products-list-container');
+    commentsListContainer.innerHTML = ''; // Limpiar la lista existente
+
+    comments.forEach(({ message, rating, username }) => {
+        const commentItem = document.createElement('div');
+        commentItem.classList.add('list-group-item'); // Agregar clase para el estilo
+        commentItem.innerHTML = `
+            <p><strong>${username} <br> </strong>${getStarsHtml(rating)}</p>
+            <p>${message}</p>
+        `;
+        commentsListContainer.appendChild(commentItem);
+    });
+}
+
+// Función para obtener el HTML de las estrellas según la calificación
+function getStarsHtml(rating) {
+    let starsHtml = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+            starsHtml += '<i class="bi bi-star-fill text-warning"></i>'; // Estrella llena
+        } else {
+            starsHtml += '<i class="bi bi-star-fill"></i>'; // Estrella vacía
+        }
+    }
+    return starsHtml;
+}
+
+// Manejo del envío del formulario
+document.querySelector('.comment-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario
+
+    const messageInput = document.getElementById('msg');
+    const usernameInput = document.getElementById('username'); // Obtener el nombre del usuario
+    const newComment = messageInput.value.trim();
+    const username = usernameInput.value.trim(); // Obtener el valor del nombre del usuario
+
+    // Agregar el nuevo comentario, calificación y nombre al array
+    if (newComment && selectedRating > 0 && username) {
+        comments.push({ message: newComment, rating: selectedRating, username: username });
+        displayComments(); // Mostrar los comentarios actualizados
+
+        // Limpiar los campos de entrada
+        messageInput.value = '';
+        usernameInput.value = ''; // Limpiar el campo del nombre de usuario
+        selectedRating = 0; // Reiniciar calificación
+        highlightStars(0); // Reiniciar estrellas
+    }
+});
+
+// Cargar los comentarios iniciales si es necesario
+window.onload = function() {
+    comments = []; // Comentarios iniciales vacíos
+    displayComments(); // Mostrar la lista vacía
+};
