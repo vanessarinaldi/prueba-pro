@@ -75,9 +75,9 @@
   margin-top: 2rem;
 }
 .list-group-item strong{
-  color: #723b08;  /*color de usuario*/
+  color: #723b08;  
   font-size: 1.1em; 
 }
 .list-group-item rating {
-  color: #ec8601; /*color de estrella*/
+  color: #ec8601; 
 }
