@@ -102,7 +102,7 @@ function highlightStars(rating) {
 
 // Función para mostrar los comentarios
 function displayComments() {
-    const commentsListContainer = document.getElementById('products-list-container');
+    const commentsListContainer = document.getElementById('container-new-comments');
     commentsListContainer.innerHTML = ''; // Limpiar la lista existente
 
     comments.forEach(({ message, rating, username }) => {
