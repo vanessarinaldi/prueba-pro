@@ -50,10 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     changeImage(i);
                 });
             }
-        }
-    }).catch(function (error) {
-        console.error('Error al obtener los datos del producto:', error);
-    });
 
         
             getJSONData(PRODUCT_COMMENTS_URL).then(function (commentsRes) {
@@ -76,7 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error('Error al obtener los comentarios del producto:', error);
             });
 
-        }); 
+        }
+    }).catch(function (error) {
+        console.error('Error al obtener los datos del producto:', error);
+    });
+});
+
+
+
+
 let comments = []; // Array para almacenar los comentarios
 let selectedRating = 0; // Variable para almacenar la calificación seleccionada
 
@@ -101,16 +105,19 @@ function highlightStars(rating) {
 }
 
 // Función para mostrar los comentarios
-function displayComments() {
+function showComments() {
     const commentsListContainer = document.getElementById('container-new-comments');
     commentsListContainer.innerHTML = ''; // Limpiar la lista existente
 
     comments.forEach(({ message, rating, username }) => {
         const commentItem = document.createElement('div');
-        commentItem.classList.add('list-group-item'); // Agregar clase para el estilo
         commentItem.innerHTML = `
-            <p><strong>${username} <br> </strong>${getStarsHtml(rating)}</p>
+        <div class="list-group-item">
+            <p><strong>${username} <br> </strong></p>
+            <div class="stars">${getStarsHtml(rating)}</div>
+
             <p>${message}</p>
+        </div>
         `;
         commentsListContainer.appendChild(commentItem);
     });
@@ -141,7 +148,7 @@ document.querySelector('.comment-form').addEventListener('submit', function(even
     // Agregar el nuevo comentario, calificación y nombre al array
     if (newComment && selectedRating > 0 && username) {
         comments.push({ message: newComment, rating: selectedRating, username: username });
-        displayComments(); // Mostrar los comentarios actualizados
+        showComments(); // Mostrar los comentarios actualizados
 
         // Limpiar los campos de entrada
         messageInput.value = '';
@@ -154,5 +161,6 @@ document.querySelector('.comment-form').addEventListener('submit', function(even
 // Cargar los comentarios iniciales si es necesario
 window.onload = function() {
     comments = []; // Comentarios iniciales vacíos
-    displayComments(); // Mostrar la lista vacía
+    showComments(); // Mostrar la lista vacía
 };
+
