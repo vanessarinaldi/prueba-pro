@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let containerInfo = document.getElementById('container-product-info');
     let productID = localStorage.getItem("productID");
+    let containerComments = document.getElementById('container-comments');
     
     const PRODUCT_INFO_URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
     const PRODUCT_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`;
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         `;
                     });
-                    containerInfo.innerHTML += commentsHTML;
+                    containerComments.innerHTML += commentsHTML;
                 }
             }).catch(function (error) {
                 console.error('Error al obtener los comentarios del producto:', error);
