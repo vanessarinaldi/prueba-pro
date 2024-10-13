@@ -97,3 +97,10 @@ body {
   input:checked + .slider:before {
     transform: translateX(26px);
   }
+
+  #foto{
+    display:none;
+  }
+  #botfot{
+    color:orange;
+  }
