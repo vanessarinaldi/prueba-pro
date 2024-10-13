@@ -279,3 +279,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let userName = localStorage.getItem('user');
+    if (userName) {
+        document.getElementById("user-container").textContent =`${userName}`;
+    }
+});

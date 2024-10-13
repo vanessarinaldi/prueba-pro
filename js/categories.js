@@ -141,3 +141,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    let userName = localStorage.getItem('user');
+    if (userName) {
+        document.getElementById("user-container").textContent =`${userName}`;
+    }
+});

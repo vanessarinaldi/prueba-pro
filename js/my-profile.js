@@ -42,6 +42,13 @@ const nombre = localStorage.getItem('nombre');
   localStorage.setItem('apellido', apellido);
   localStorage.setItem('segundoApellido', document.getElementById('segundo-apellido').value);
   localStorage.setItem('telefono', document.getElementById('telefono').value);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let userName = localStorage.getItem('user');
+    if (userName) {
+        document.getElementById("user-container").textContent =`${userName}`;
+    }
+});
 //Desafiate
 const defaultFile = 'https://via.placeholder.com/150';
   const file = document.getElementById('foto');
@@ -59,3 +66,4 @@ const defaultFile = 'https://via.placeholder.com/150';
     
   });
   localStorage.setItem('foto', document.getElementById('foto'));
+
