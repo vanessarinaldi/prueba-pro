@@ -17,7 +17,7 @@
     resize: vertical;
   }
   
-  .btn-submit {
+  .btn {
     margin-top: 10px;
     padding: 10px 15px;
     background-color: #ec8601;
@@ -27,10 +27,10 @@
     cursor: pointer;
   }
   
-  .btn-submit:hover {
+  .btn:hover {
     background-color: #f1d96c;
   }
-/* Seccion de comentarios */
+  /* Seccion de comentarios */
 .comment {
   margin-bottom: 15px;
   padding: 15px; 
@@ -78,64 +78,57 @@
   color: #723b08;  
   font-size: 1.1em; 
 }
-.list-group-item rating {
+.rating {
   color: #ec8601; 
 }
-/*Productos recomendados*/
-.related-products {
-  margin-top: 20px;
+
+.carousel-item {
+  display: none; /* Oculta las imágenes inicialmente */
 }
 
-.related-products h3 {
-  margin-bottom: 15px;
-  font-size: 1.5em;
+.carousel-item.active {
+  display: block; /* Solo muestra la imagen activa */
 }
 
-.related-products-list {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 10px 0;
-}
-
-.related-product-card {
-  flex: 0 0 auto;
-  width: 150px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
-  text-align: center;
-  background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.related-product-card:hover {
+.card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: rgb(223, 223, 223);
 }
 
-.related-product-card a {
-  color: inherit;
-  text-decoration: none;
+.card {
+  border: 0.2rem solid #ccc;
+  border-radius: 3rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  padding: 2rem;
 }
 
-.related-product-img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
+.card-img-top {
+  height: 80%;
+  border-radius: 2rem;
 }
 
-.related-product-info {
-  padding: 10px;
+.card-title {
+  font-weight: bold;
 }
 
-.related-product-info h4 {
-  font-size: 1em;
-  margin: 10px 0 5px;
+.card-title:hover {
+  text-decoration: underline;
 }
 
-.related-product-info p {
-  font-size: 0.9em;
-  color: #666;
-  margin: 0;
+.bi-star-fill {
+  color: white;
+}
+
+.bi-star-fill:hover {
+cursor: pointer;
+}
+
+.star-custom {
+  color: #ec8601;
+}
+
+.rating {
+  margin-bottom: 1rem;
 }
