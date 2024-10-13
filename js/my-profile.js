@@ -58,3 +58,4 @@ const defaultFile = 'https://via.placeholder.com/150';
     }
     
   });
+  localStorage.setItem('foto', document.getElementById('foto'));
