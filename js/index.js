@@ -19,3 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("user-container").textContent =`${userName}`;
     }
 });
+let registerLink = document.getElementById("register-link");
+if (registerLink) {
+    registerLink.style.display = "none"; // Oculta el enlace de "Registrarse"
+}
+
+// Mostrar el contenedor del menú de usuario (dropdown)
+if (userName) {
+    userName.classList.remove("d-none"); // Quita la clase que lo oculta
+}
