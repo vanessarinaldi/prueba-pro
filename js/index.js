@@ -18,4 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (userName) {
         document.getElementById("user-container").textContent =`${userName}`;
     }
-});
+})
+
+       /* let registerLink = document.getElementById("register-link");
+        if (registerLink) {
+            registerLink.style.display = "none"; // Oculta el enlace de "Registrarse"
+        }*/
+
+       
+
