@@ -38,12 +38,22 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h5 class="price-product-info">${productInfo.currency}: ${productInfo.cost}</h5>
                             <small class="text-muted">Cantidad vendidos: ${productInfo.soldCount}</small>
                             <p class="card-text-product-info">${productInfo.description}</p>
+                            <button id="btnComprar" class="btn btn-success">Comprar</button>
                         </div>
                     </div>
                 </div>
             `;
 
             console.log("Productos info:", productInfo);
+
+            document.getElementById("btnComprar").addEventListener("click", () => {
+                // Guarda la información del producto en localStorage
+                localStorage.setItem("producto", JSON.stringify(productInfo));
+
+                // Redirigir a cart.html
+                window.location.href = "cart.html";
+            });
+
 
             const carouselImages = document.getElementById("carouselImages");
             const carouselIndicators = document.querySelector(".carousel-indicators");
@@ -198,9 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         const messageInput = document.getElementById('msg');
-        const usernameInput = document.getElementById('username');
         const newComment = messageInput.value.trim();
-        const username = usernameInput.value.trim();
+        const username = `${localStorage.getItem('nombre')}_${localStorage.getItem('apellido')}`.toLowerCase();
 
         console.log("Comment submission attempt:", { newComment, username, selectedRating });
 
@@ -277,11 +286,48 @@ document.addEventListener("DOMContentLoaded", function () {
     // envío del formulario, se ejecuta la funcion
     document.querySelector('.comment-form').addEventListener('submit', commentSubmit);
 
+// Visibilidad del nombre de usuario
+
+let userName = localStorage.getItem('email');
+let userContainer = document.getElementById("user");
+
+if (userName) {
+    userContainer.innerHTML = `
+        <a id="user-container" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+            <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a id="logout-btn" class="dropdown-item" href="#">Cerrar Sesión</a></li>
+        </ul>
+    `;
+    document.getElementById("user-container").textContent = userName;
+  
+    document.getElementById('register-link').style.display = 'none';
+} else {
+    userContainer.innerHTML = '';
+}
+
+//Funcionalidad para el boton de cerrar sesion.
+
+const logoutBtn = document.getElementById('logout-btn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        localStorage.removeItem('email'); 
+        localStorage.removeItem('nombre');
+        localStorage.removeItem('segundoNombre');
+        localStorage.removeItem('apellido');
+        localStorage.removeItem('segundoApellido');
+        localStorage.removeItem('telefono');
+        localStorage.removeItem('foto')
+
+        document.getElementById("user").innerHTML = '';
+      
+        location.replace('login.html');
+    });
+}
+
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    let userName = localStorage.getItem('user');
-    if (userName) {
-        document.getElementById("user-container").textContent =`${userName}`;
-    }
-});
